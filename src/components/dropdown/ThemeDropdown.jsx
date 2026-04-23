@@ -11,7 +11,6 @@ export default function ThemeDropdown({ onThemeChange }) {
 
   return (
     <div className="relative">
-      {/* Button */}
       <button
         onClick={() => setOpen(!open)}
         style={{ backgroundColor: "var(--portfolio-badge-bg)", color: "var(--portfolio-text)" }}
@@ -20,7 +19,7 @@ export default function ThemeDropdown({ onThemeChange }) {
         Theme <FaChevronDown size={12} />
       </button>
 
-      {/* Dropdown */}
+      
       {open && (
         <div className="absolute mt-2 w-40 rounded-xl shadow-lg z-50 border" style={{ backgroundColor: "var(--portfolio-pill-bg)", borderColor: "var(--portfolio-accent-border)", backdropFilter: "blur(12px)" }}>
           <ul className="text-sm" style={{ color: "var(--portfolio-text)" }}>

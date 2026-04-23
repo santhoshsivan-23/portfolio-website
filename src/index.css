@@ -81,7 +81,6 @@ body {
   box-shadow: 0 8px 18px var(--portfolio-shadow);
 }
 
-/* Glass card glow overlay — smooth opacity fade */
 .glass-glow {
   transition: opacity 0.45s ease !important;
 }
