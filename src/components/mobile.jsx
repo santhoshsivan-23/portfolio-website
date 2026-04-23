@@ -18,7 +18,6 @@ import {
   FaCertificate
 } from "react-icons/fa";
 
-// ── Typing card data ──────────────────────────────────────────
 const FIXED_TITLE = "Full Stack Developer";
 
 const phases = [
@@ -49,7 +48,7 @@ function SkillsTypingCard() {
   const [items, setItems]                   = useState([]); // { text, done }[]
   const [stage, setStage]                   = useState("label");
 
-  // ── Type the fixed title once ────────────────────────────────
+
   useEffect(() => {
     let cancelled = false;
     let ti = 0;
@@ -66,8 +65,6 @@ function SkillsTypingCard() {
     const init = setTimeout(typeTitle, 300);
     return () => { cancelled = true; clearTimeout(init); };
   }, []);
-
-  // ── Cycle phases once title is done ─────────────────────────
   useEffect(() => {
     if (!titleDone) return;
     const phase = phases[phaseIndex];
@@ -92,8 +89,7 @@ function SkillsTypingCard() {
 
       const targetText = phase.items[itemIdx];
 
-      // Add the item to the DOM immediately (empty text + cursor visible)
-      // so the motion.li slide-in plays ONCE, then typing fills it in-place.
+      
       setItems(prev => [...prev, { text: "", done: false }]);
 
       let ci = 0;
@@ -101,7 +97,7 @@ function SkillsTypingCard() {
         if (cancelled) return;
         ci++;
         const sliced = targetText.slice(0, ci);
-        // Update in-place — same DOM node, no remount, no flicker
+        
         setItems(prev => {
           const next = [...prev];
           next[next.length - 1] = { text: sliced, done: false };
@@ -110,7 +106,6 @@ function SkillsTypingCard() {
         if (ci < targetText.length) {
           setTimeout(typeChar, 48);
         } else {
-          // Commit: hide cursor, same DOM node
           setTimeout(() => {
             if (cancelled) return;
             setItems(prev => {
@@ -123,7 +118,7 @@ function SkillsTypingCard() {
           }, 210);
         }
       };
-      // Small delay so React renders the new item (slide-in starts) before typing
+      
       setTimeout(typeChar, 20);
     };
 
@@ -148,7 +143,6 @@ function SkillsTypingCard() {
       className="backdrop-blur-lg border rounded-3xl p-8 pt-10 min-h-[420px] flex flex-col justify-start items-start"
       style={{ backgroundColor: "var(--portfolio-card-bg)", borderColor: "var(--portfolio-accent-border)", boxShadow: "0 0 40px var(--portfolio-shadow)" }}
     >
-      {/* Fixed title – typed once, stays forever */}
       <h3 className="text-2xl font-bold flex items-center gap-1 min-h-[2rem]" style={{ color: "var(--portfolio-accent)" }}>
         {displayedTitle}
         {!titleDone && (
@@ -156,12 +150,10 @@ function SkillsTypingCard() {
         )}
       </h3>
 
-      {/* Divider */}
       {titleDone && (
         <div className="w-full h-px mt-4 mb-3" style={{ backgroundColor: "var(--portfolio-accent-border)" }} />
       )}
 
-      {/* Cycling section – label + items */}
       <AnimatePresence mode="wait">
         <motion.div
           key={phaseIndex}
@@ -171,7 +163,6 @@ function SkillsTypingCard() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="w-full"
         >
-          {/* Section label */}
           <p className="text-xs tracking-widest uppercase mb-3 flex items-center gap-1" style={{ color: "var(--portfolio-accent)" }}>
             {displayedLabel}
             {stage === "label" && titleDone && (
@@ -179,7 +170,7 @@ function SkillsTypingCard() {
             )}
           </p>
 
-          {/* Items – single DOM node per item, no swap, no flicker */}
+         
           <ul className="space-y-3 w-full">
             {items.map((item, i) => (
               <motion.li
@@ -233,13 +224,11 @@ export default function App({ theme = "violet", onThemeChange }) {
       style={{ backgroundColor: "var(--portfolio-bg)", color: "var(--portfolio-text)", transition: "background-color 0.4s ease, color 0.4s ease" }}
     >
 
-      {/* Background Glows */}
       <div className="absolute top-10 left-4 w-60 h-60 blur-[120px] rounded-full" style={{ backgroundColor: "var(--portfolio-glow1)" }}></div>
       <div className="absolute bottom-10 right-4 w-60 h-60 blur-[120px] rounded-full" style={{ backgroundColor: "var(--portfolio-glow2)" }}></div>
 
       <div className="max-w-xl mx-auto px-5 py-5 relative z-10">
 
-        {/* HERO SECTION */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
@@ -268,7 +257,7 @@ export default function App({ theme = "violet", onThemeChange }) {
             TypeScript, Redux and scalable backend development.
           </p>
 
-          {/* Contact */}
+          
           <div className="flex flex-col gap-3">
             <span className="px-4 py-2 rounded-full flex items-center gap-2 text-sm cursor-default" style={{ backgroundColor: "var(--portfolio-pill-bg)" }}>
               <FaPhoneAlt className="shrink-0" style={{ color: "var(--portfolio-accent)" }} />
@@ -299,7 +288,7 @@ export default function App({ theme = "violet", onThemeChange }) {
   </a>
 
   <a
-    href="https://github.com/SanthoshSivan11"
+    href="https://github.com/SanthoshSivan-23"
     target="_blank"
     rel="noreferrer"
     className="flex items-center gap-2 px-3 py-1 rounded-full whitespace-nowrap"
@@ -329,13 +318,11 @@ export default function App({ theme = "violet", onThemeChange }) {
 </div>
           </div>
 
-          {/* Typing Card */}
           <div className="mt-2">
             <SkillsTypingCard />
           </div>
         </motion.section>
 
-        {/* PROFESSIONAL SUMMARY */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
@@ -357,7 +344,6 @@ export default function App({ theme = "violet", onThemeChange }) {
           </GlassCard>
         </motion.section>
 
-        {/* TECHNICAL SKILLS */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
@@ -381,7 +367,6 @@ export default function App({ theme = "violet", onThemeChange }) {
           </GlassCard>
         </motion.section>
 
-        {/* EXPERIENCE */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
@@ -410,7 +395,6 @@ export default function App({ theme = "violet", onThemeChange }) {
           </GlassCard>
         </motion.section>
 
-        {/* INTERNSHIP + CERTIFICATIONS */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
@@ -425,7 +409,6 @@ export default function App({ theme = "violet", onThemeChange }) {
 
   <div className="grid md:grid-cols-2 gap-8">
     
-    {/* Internship */}
     <GlassCard>
       <h3 className="text-2xl font-semibold mb-4" style={{ color: "var(--portfolio-heading)" }}>
         Internship
@@ -436,7 +419,6 @@ export default function App({ theme = "violet", onThemeChange }) {
       </ul>
     </GlassCard>
 
-    {/* Certifications */}
     <GlassCard>
       <h3 className="text-2xl font-semibold mb-4" style={{ color: "var(--portfolio-heading)" }}>
         Certifications
@@ -451,7 +433,6 @@ export default function App({ theme = "violet", onThemeChange }) {
   </div>
 </motion.section>
 
-        {/* PROJECTS */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
@@ -509,7 +490,6 @@ export default function App({ theme = "violet", onThemeChange }) {
           </div>
         </motion.section>
 
-        {/* EDUCATION */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
