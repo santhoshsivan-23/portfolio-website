@@ -250,7 +250,7 @@ export default function App({ theme = "violet", onThemeChange }) {
             <span className="block" style={{ color: "var(--portfolio-accent)" }}>Sivan H</span>
           </h1>
 
-          <h2 className="text-xl font-semibold" style={{ color: "var(--portfolio-heading)" }}>Full Stack Developer</h2>
+          <h2 className="text-sm font-semibold" style={{ color: "var(--portfolio-heading)" }}>Frontend Developer @ Warely Software | <br/>Full Stack Developer</h2>
 
           <p className="text-sm leading-7" style={{ color: "var(--portfolio-subtext)" }}>
             Full Stack Developer specializing in React, Node.js,
@@ -276,7 +276,7 @@ export default function App({ theme = "violet", onThemeChange }) {
   <a
     href={ResumePDF}
     download="Resume.pdf"
-    className="flex items-center gap-2 px-3 py-1 rounded-full whitespace-nowrap"
+    className="flex items-center text-sm gap-2 px-3 py-1 rounded-full whitespace-nowrap"
     style={{
       backgroundColor: "var(--portfolio-accent-light)",
       color: "var(--portfolio-accent)",
@@ -291,7 +291,7 @@ export default function App({ theme = "violet", onThemeChange }) {
     href="https://github.com/SanthoshSivan-23"
     target="_blank"
     rel="noreferrer"
-    className="flex items-center gap-2 px-3 py-1 rounded-full whitespace-nowrap"
+    className="flex items-center text-sm gap-2 px-3 py-1 rounded-full whitespace-nowrap"
     style={{
       backgroundColor: "var(--portfolio-pill-bg)",
       color: "var(--portfolio-text)"
@@ -305,7 +305,7 @@ export default function App({ theme = "violet", onThemeChange }) {
     href="https://www.linkedin.com/in/santhosh-sivan-h-589801274/"
     target="_blank"
     rel="noreferrer"
-    className="flex items-center gap-2 px-3 py-1 rounded-full whitespace-nowrap"
+    className="flex items-center text-sm gap-2 px-3 py-1 rounded-full whitespace-nowrap"
     style={{
       backgroundColor: "var(--portfolio-pill-bg)",
       color: "var(--portfolio-text)"
@@ -410,20 +410,20 @@ export default function App({ theme = "violet", onThemeChange }) {
   <div className="grid md:grid-cols-2 gap-8">
     
     <GlassCard>
-      <h3 className="text-2xl font-semibold mb-4" style={{ color: "var(--portfolio-heading)" }}>
+      <h3 className="text-sm font-semibold mb-4" style={{ color: "var(--portfolio-heading)" }}>
         Internship
       </h3>
-      <ul className="list-disc ml-6 space-y-3" style={{ color: "var(--portfolio-subtext)" }}>
+      <ul className="list-disc text-sm ml-6 space-y-3" style={{ color: "var(--portfolio-subtext)" }}>
         <li>Java Full Stack Internship – Wipro (May 2024 – Sep 2024)</li>
         <li>Web Development Certificate – InternPe</li>
       </ul>
     </GlassCard>
 
     <GlassCard>
-      <h3 className="text-2xl font-semibold mb-4" style={{ color: "var(--portfolio-heading)" }}>
+      <h3 className="text-sm text-sm font-semibold mb-4" style={{ color: "var(--portfolio-heading)" }}>
         Certifications
       </h3>
-      <ul className="list-disc ml-6 space-y-3" style={{ color: "var(--portfolio-subtext)" }}>
+      <ul className="list-disc text-sm ml-6 space-y-3" style={{ color: "var(--portfolio-subtext)" }}>
         <li>Oracle Java Explorer Badge – Oracle MyLearn</li>
         <li>Network Essentials Certification – Cisco</li>
         <li>Full Stack Development Certificate – Novitech</li>

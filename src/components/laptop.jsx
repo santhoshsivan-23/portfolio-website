@@ -270,8 +270,8 @@ export default function App({ theme = "violet", onThemeChange }) {
               </span>
             </h1>
 
-            <h2 className="text-3xl mt-5 font-semibold" style={{ color: "var(--portfolio-heading)" }}>
-              Full Stack Developer
+            <h2 className="text-2xl mt-5 font-semibold" style={{ color: "var(--portfolio-heading)" }}>
+              Frontend Developer @ Warely Software | <br/>Full Stack Developer
             </h2>
 
             <p className="mt-4 leading-8 max-w-xl" style={{ color: "var(--portfolio-subtext)" }}>
