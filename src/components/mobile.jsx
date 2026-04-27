@@ -250,7 +250,7 @@ export default function App({ theme = "violet", onThemeChange }) {
             <span className="block" style={{ color: "var(--portfolio-accent)" }}>Sivan H</span>
           </h1>
 
-          <h2 className="text-sm font-semibold" style={{ color: "var(--portfolio-heading)" }}>Frontend Developer @ Warely Software | <br/>Full Stack Developer</h2>
+          <h2 className="text-lg font-semibold" style={{ color: "var(--portfolio-heading)" }}>Frontend Developer @ Warely Software | <br/>Full Stack Developer</h2>
 
           <p className="text-sm leading-7" style={{ color: "var(--portfolio-subtext)" }}>
             Full Stack Developer specializing in React, Node.js,
